@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+ <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+ <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+ <title>Arifzyn API || Pricing</title>
+ <link rel="icon" href="images/icon.png" type="image/png">
+ <link rel="stylesheet" href="https://api.arifzyn.biz.id/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://api.arifzyn.biz.id/css/style.css">
+ <link rel="stylesheet" href="https://api.arifzyn.biz.id/css/dark.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dark-mode">
+ <div class="main-wrapper">
+  <div class="main-content">
+   <section class="section">
+    <div class="section-body">
+     <div class="row">
+      <div class="col-12 col-sm-12 col-lg-6">
+       <div class="card mb-3">
+        <div class="card-body position-relative">
+         <div class="row">
+          <div class="col-lg-8">
+           <h5>Order</h5>
+           <p class="mb-0">Setelah melakukan transfer tunggu beberapa saat kemudian klik tombol check untuk mengkonfirmasi pembayaran.</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="card mb-3">
+        <div class="card-header">
+         <div class="row flex-between-end">
+          <div class="col-auto align-self-center">
+           <h5 class="mb-0" data-anchor="data-anchor">Informasi</h5>
+          </div>
+         </div>
+        </div>
+        <div class="card mb-3">
+         <div class="card-body bg-body-tertiary">
+          <div class="tab-content">
+           <div class="tab-pane preview-tab-pane active">
+            <a href="<%= data.qr_url %>" data-gallery="gallery-2">
+             <img class="img-fluid rounded" src="<%= data.qr_url %>" alt="Qris Image" width="300" />
+            </a>
+            </div>
+           <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-45eeade0-c88f-4e7b-b3d2-3e9d1a21b6a5" id="dom-45eeade0-c88f-4e7b-b3d2-3e9d1a21b6a5">
+            <pre class="scrollbar rounded-1" style="max-height: 420px">
+               <code class="language-html">
+                  <a href="<%= data.qr_url %>">
+                   <img class="img-fluid rounded" src="<%= data.qr_url %>" alt="Qris Image" width="300">
+                  </a>
+               </code>
+             </pre>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card-body bg-body-tertiary">
+         <div class="tab-content">
+          <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-5a848b5e-a0e7-4d9d-96f0-3b22eb098832" id="dom-5a848b5e-a0e7-4d9d-96f0-3b22eb098832">
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>ID : <%= data.id %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Package : <%= package %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Price : Rp. <%= data.amount_raw %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>E-Mail : <%= user.email %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Limit : <%= data.limit %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Duration : <%= data.duration %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Status : <%= data.status %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Created : <%= data.created_at %></code></div>
+           <div class="bg-100 text-dark p-2 border border-dashed mb-3 w-auto"><code>Expired : <%= data.expired_at %></code></div>
+           <form action="/admin/order/check?id=<%= data.id %>">
+            <input class="form-control" type="hidden" name="id" id="id" value="<%= data.id %>" />
+            <button id="" class="btn" type="submit" onclick="execute()">Check</button>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</body>
+
+</html> 

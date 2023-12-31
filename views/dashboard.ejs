@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+ <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+ <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+ <title><%= title %> || Dashboard</title>
+ <link rel="icon" href="images/icon.png" type="image/png">
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/dark.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dark-mode">
+ <div id="app">
+  <div class="main-wrapper">
+   <%- include('./layout/navbar.ejs') %>
+   <%- include('./layout/sidebar.ejs') %>
+   <div class="main-content">
+    <section class="section">
+     <div class="section-body">
+      <div class="row">
+       <div class="col-12 col-sm-12 col-lg-6">
+        <div class="card">
+         <div class="card-body">
+          <h5 class="card-title">Apikey</h5>
+          <div class="d-flex align-items-center mb-3">
+           <div class="info-container">
+            <i class="fas fa-key info-icon"></i>
+           </div>
+           <div class="ps-3">
+            <div class="sm-text ml-2">
+             <%= apikey %>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-sm-12 col-lg-6">
+        <div class="card">
+         <div class="card-body">
+          <h5 class="card-title">Clock</h5>
+          <div class="d-flex align-items-center mb-3">
+           <div class="info-container">
+            <i class="fas fa-clock info-icon"></i>
+           </div>
+           <div class="ps-3">
+            <div id="clock" class="sm-text ml-2"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-sm-12 col-lg-6">
+        <div class="card">
+         <div class="card-body">
+          <h5 class="card-title">IP Address</h5>
+          <div class="d-flex align-items-center mb-3">
+           <div class="info-container">
+            <i class="fas fa-network-wired info-icon"></i>
+           </div>
+           <div class="ps-3">
+            <div id="ipAddress" class="sm-text ml-2"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-sm-12 col-lg-6">
+        <div class="card">
+         <div class="card-body">
+          <h5 class="card-title">Visitor</h5>
+          <div class="d-flex align-items-center mb-3">
+           <div class="info-container">
+            <i class="fas fa-eye info-icon"></i>
+           </div>
+           <div class="ps-3">
+            <div id="visitor" class="sm-text ml-2">
+             0
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-sm-12 col-lg-6">
+         <div class="card">
+           <div class="card-body">
+             <h5 class="card-title">Cek Apikey</h5>
+             <form action="/admin/cekApikey" method="GET">
+               <label for="apikey" class="form-label"></label>
+               <input type="text" id="apikey" name="apikey" class="form-control" value="<%= apikey %>"/>
+               <button type="sumbit" class="btn btn-outline-secondary float-right mt-3">Submit</button>
+             </form> 
+           </div>
+         </div>
+       </div>
+       <div class="col-12 col-sm-12 col-lg-6">
+        <div class="card">
+         <div class="card-body">
+          <strong>Thanks:</strong>
+          <div class="row">
+           <div class="col-auto">
+            <ul>
+             <li>Allah SWT.</li>
+             <li>Dika Ardnt.</li>
+             <li>CaliphDev.</li>
+             <li>YanzBotz.</li>
+             <li>SanzyDev.</li>
+             <li>The person who helped share this API</li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+  <footer class="footer mt-auto py-3">
+   <div class="container text-center">
+    <p class="text-muted">
+     <%= footer %>
+    </p>
+   </div>
+  </footer>
+ </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="modules/bootstrap.min.js"></script>
+ <script src="modules/jquery.nicescroll.min.js"></script>
+ <script src="js/stisla.js"></script>
+ <script src="js/scripts.js"></script>
+ <script src="js/dashboard.js"></script>
+</body>
+
+</html>

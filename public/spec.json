@@ -1,0 +1,508 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Arifzyn APIs",
+    "description": "Documentation for Arifzyn APIs.",
+    "version": "1.1.1",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "api.arifzyn.biz.id",
+  "servers": [
+    {
+      "url": "https://api.arifzyn.biz.id",
+      "description": "Production server"
+    },
+    {
+      "url": "https://app.arifzyn.biz.id",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/ai/image2prompt": {
+      "post": {
+        "summary": "Process an image",
+        "operationId": "get_image2prompt",
+        "tags": [
+          "AI"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "description": "Image file to upload",
+            "required": true,
+            "schema": {
+              "type": "file"
+            }
+          }
+        ],
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prompt": {
+                      "type": "string",
+                      "description": "Generated prompt"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/txt2img": {
+      "get": {
+        "summary": "generate image using AI",
+        "operationId": "get_txt2img",
+        "tags": [
+          "AI"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "prompt",
+            "description": "prompt parameters",
+            "schema": {
+              "type": "query",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "prompt image"
+                }
+              }
+            }
+          },
+          {
+            "in": "query",
+            "name": "model",
+            "description": "model parameters",
+            "schema": {
+              "type": "query",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "prompt image"
+                }
+              }
+            }
+          }
+        ],
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "description": "url image"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/upscale": {
+      "post": {
+        "summary": "Upscale an image using AI",
+        "description": "Endpoint to upscale an image using AI",
+        "operationId": "get_upscale",
+        "tags": [
+          "AI"
+        ],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "description": "Image file to upload",
+            "required": true,
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "size",
+            "in": "formData",
+            "description": "Size parameter (low, medium, high)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          }
+        ],
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "url": "url_of_upscaled_image"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Invalid input parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/bard": {
+      "post": {
+        "summary": "Bard Ai Chat",
+        "description": "Endpoint bard ai",
+        "operationId": "post_bard",
+        "tags": [
+          "AI"
+        ],
+        "requestBody": {
+          "content": { 	
+            "multipart/form-data": {    
+              "schema": {    
+                "type": "object",
+                "properties": {
+                "image": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "Image file to upload"
+                },
+                "text": {
+                  "type": "string",
+                  "description": "Text from Bard"
+                }
+               },
+               "required": ["text"]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "result": "text_message"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Invalid input parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/cai/search": {
+      "get": {
+        "summary": "Search Character By query",
+        "description": "Endpoint search Character",
+        "operationId": "get_cai_search",
+        "tags": [
+          "Character AI"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "parameter query to search",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "query"
+            }
+          }
+        ],
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "result": "array"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Invalid input parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/cai/createChat": {
+      "get": {
+        "summary": "Create Chat Using Character ID",
+        "description": "Endpoint create Chat UD",
+        "operationId": "get_cai_create",
+        "tags": [
+          "Character AI"
+        ],
+        "parameters": [
+          {
+            "name": "character_id",
+            "in": "query",
+            "description": "parameter character_id to create",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "character_id"
+            }
+          }
+        ],
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "result": "array"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Invalid input parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/cai/chat": {
+      "post": {
+        "summary": "chat Character ai",
+        "description": "Endpoint chat",
+        "operationId": "get_cai_chat",
+        "tags": [
+          "Character AI"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "character_id": {
+                    "type": "string",
+                    "description": "ID of the character"
+                  },
+                  "chatId": {
+                    "type": "string",
+                    "description": "ID of the chat"
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Chat message"
+                  }
+                },
+                "required": ["character_id", "chatId", "message"],
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "result": "text_message"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Invalid input parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "description": "Insert your API key in the parameter.",
+        "name": "apikey",
+        "in": "query"
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta name="description" content="Download Feature API">
+  <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+  <title><%= title %>  || Feature</title>
+  <link rel="icon" href="../images/icon.png" type="image/png">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dark.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dark-mode">
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <%- include('../layout/navbar.ejs') %>
+      <%- include('../layout/sidebar.ejs') %>
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="text-center mb-3">Downloader API</h6>
+                    <div class="table-responsive text-black text-nowrap">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                        </div> 
+                        <input type="text" class="form-control" id="myInput" onkeyup="searcTable()" placeholder="Type to search">
+                      </div>
+                      <table id="apiTable" class="table table-bordered">
+                        <thead>
+                          <tr class="table-secondary">
+                            <th scope="col">Name</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Tiktok</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/tiktok?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Instagram</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/instagram?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Facebook</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/facebook?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Pinterest</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li>
+                            </td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/pinterest?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Snackvideo</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/snackvideo?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Like</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/like?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Cocofun</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/cocofun?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Capcut</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/capcut?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Sfiledown</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/sfiledown?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Gdrivedl</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/gdrivedl?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Krakenfiles</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/krakenfiles?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Douyin</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/douyin?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>YouTube Mp4</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/ytmp4?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>YouTube Mp3</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/ytmp3?url=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>YouTube Play</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/ytplay?query=">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>YouTube Play Mp4</td>
+                            <td><li class="btn btn-sm btn-primary">GET</li></td>
+                            <td>url</td>
+                            <td><a class="btn btn-primary mb-2" href="/download/ytplayvid?query=">Detail</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p class="text-muted">
+          <%= footer %>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../modules/bootstrap.min.js"></script>
+  <script src="../modules/jquery.nicescroll.min.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/stisla.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>

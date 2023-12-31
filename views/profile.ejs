@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+ <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+ <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+ <title><%= title %> || Dashboard</title>
+ <link rel="icon" href="images/icon.png" type="image/png">
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/dark.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <style>
+  .label {
+   display: inline-block;
+   width: 80px;
+  }
+ </style>
+</head>
+
+<body class="dark-mode">
+  <div id="app">
+    <div class="main-wrapper">
+    <%- include('./layout/navbar.ejs') %>
+    <%- include('./layout/sidebar.ejs') %>
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="card profile-card">
+                  <div class="card-header">
+                    <h4>
+                      <span class="avatar avatar-lg online">
+                        <img alt="profile" src="<%= user.profile %>" class="rounded-circle img-fluid">
+                      </span>
+                      <span class="nama_pengguna"><%= user.username %></span>
+                    </h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: <%= user.limit  %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= user.limit %>/25</div>
+                          </div>
+                          <ul class="list-unstyled mb-0">
+                            <li class="mb-1"><b>Limit</b>: <%= user.premium ? "Unlimited" : user.limit %></li>
+                            <li class="mb-1"><b>Apikey</b>: <%= apikey %></li>
+                            <li class="mb-1"><b>Email</b>: <%= user.email %></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="apikey" class="form-label text-white">Premium Status</label>
+                          <div class="badge badge-success badge-lg"><%= user.premium ? "Aktif" : "Tidak Aktif" %></div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label for="apikey" class="form-label text-white">Masa Berlaku</label>
+                          <div class="badge badge-warning badge-lg" id="premium"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p class="text-muted">
+          <%= footer %>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+  function timer(milliseconds) {
+    const days = Math.floor(milliseconds / (24 * 60 * 60 * 1000));
+    const hours = Math.floor((milliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    const minutes = Math.floor((milliseconds % (60 * 60 * 1000)) / (60 * 1000));
+    const seconds = Math.floor((milliseconds % (60 * 1000)) / 1000);
+
+    return `${days}:${hours}:${minutes}`;
+  }
+  document.getElementById('premium').innerText = `${timer(<%= user.premiumTime %>)}`;
+  </script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="modules/bootstrap.min.js"></script>
+ <script src="modules/jquery.nicescroll.min.js"></script>
+ <script src="js/stisla.js"></script>
+ <script src="js/scripts.js"></script>
+</body>
+
+</html>

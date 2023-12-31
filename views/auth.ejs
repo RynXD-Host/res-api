@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Arifzyn API || Login</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body> 
+
+ <!--
+ <header class="navbar">
+  <div class="navbar-container">
+   <div class="navbar-brand">Arifzyn API</div>
+   <a class="navbar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+   <ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+     <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="/terms">Terms of Service</a>
+    </li>
+   </ul>
+  </div>
+ </header>
+ -->
+
+ <div class="wrapper">
+  <div class="form-wrapper sign-in">
+     <% if (messages.error || messages.success) { %>
+      <div class="flash-messages">
+        <% if (messages.error) { %>
+          <div class="alert alert-danger">
+            <%= messages.error %>
+          </div>
+          <script><alert><%= messages.error %></alert></script>
+        <% } %>
+
+        <% if (messages.success) { %>
+          <div class="alert alert-success">
+            <%= messages.success %>
+          </div>
+          <script><alert><%= messages.success %></alert></script>
+        <% } %>
+      </div>
+    <% } %>
+   <form action="/auth/login" method="POST">
+    <h2>Login</h2>
+    <div class="input-group">
+     <input type="password" name="apikey" required>
+     <label for="">Apikey</label>
+    </div>
+    <div class="remember">
+     <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit">Login</button>
+    <div class="signUp-link">
+     <p>Don't You Have Apikey?</p>
+     <div class="social-buttons">
+      <a href="/auth/google" class="btn gl-btn"><i class="fab fa-google"></i> Login with Google</a>
+      <!-- <a href="/auth/github" class="btn gh-btn"><i class="fab fa-github"></i> Login with GitHub</a> -->
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+ <script>
+  function toggleSidebar() {
+   document.querySelector('.navbar-nav').classList.toggle('active');
+  }
+
+  document.querySelectorAll('.navbar-nav a').forEach(link => {
+   link.addEventListener('click', () => {
+    document.querySelector('.navbar-nav').classList.remove('active');
+   });
+  });
+ </script>
+</body>
+
+</html> 

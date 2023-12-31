@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg main-navbar">
+  <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
+  <ul class="navbar-nav navbar-right">
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+        <img alt="image" src="<%= user.profile %>" class="rounded-circle mr-1">
+        <div class="d-sm-none d-lg-inline-block ps-3">
+          Hi, Arifzyn
+        </div>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" style="background-color: #282c36; color: #fff;">
+        <div class="dropdown-title ps-3">
+          Hi, <%= user.username %>
+        </div>
+        <a href="/profile" class="dropdown-item has-icon ps-3">
+          <i class="fa fa-user"></i> Profile
+        </a>
+        <a href="/setings" class="dropdown-item has-icon ps-3">
+          <i class="fa fa-gear"></i> Settings 
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="/auth/logout" class="dropdown-item has-icon text-danger">
+          <i class="fas fa-sign-out-alt">
+          </i> Logout</a> 
+      </div>
+    </li>
+  </ul>
+</nav>

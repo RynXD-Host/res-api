@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta name="description" content="AI Feature API">
+  <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+  <title><%= title %>  || Feature</title>
+  <link rel="icon" href="../images/icon.png" type="image/png">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dark.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> 
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body class="dark-mode">
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+       <%- include('../layout/navbar.ejs') %>
+       <%- include('../layout/sidebar.ejs') %>
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="text-center mb-3">Artificial Intelligence API</h6>
+                    <div class="table-responsive text-black text-nowrap">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                        </div> 
+                        <input type="text" class="form-control" id="myInput" onkeyup="searcTable()" placeholder="Type to search">
+                      </div>
+                      <table id="apiTable" class="table table-bordered">
+                        <thead>
+                          <tr class="table-secondary">
+                            <th scope="col">Name</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>AzureGPT 4</td>
+                            <td><li class="btn btn-sm btn-outline-secondary">GET</li></td>
+                            <td>text, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/azureGPT?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>ChatGPT 3</td>
+                            <td><li class="btn btn-sm btn-outline-secondary">GET</li></td>
+                            <td>text, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/chatGPT3?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>ChatGPT 3 Prompt</td>
+                            <td><li class="btn btn-sm btn-outline-secondary">POST</li></td>
+                            <td>messages, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/docs">Detail</a></td>
+                          </tr>
+                           <tr>
+                            <td>You Ai</td>
+                            <td><li class="btn btn-sm btn-outline-secondary">GET</li></td>
+                            <td>query, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/you?query=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Bard Ai</td>
+                            <td><li class="btn btn-outline-secondary">POST</li></td>
+                            <td>image, text, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/docs">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Gemini Ai</td>
+                            <td><li class="btn btn-outline-secondary">POST</li></td>
+                            <td>text</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/gemini?text=Halo&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Bing Chat</td>
+                            <td><li class="btn btn-outline-secondary">GET</li></td>
+                            <td>text, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/bing?text=Halo&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Bing Image Ai</td>
+                            <td><li class="btn btn-outline-secondary">GET</li></td>
+                            <td>prompt, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/bingimg?prompt=1girl&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Character Ai</td>
+                            <td><li class="btn btn-outline-secondary">GET</li></td>
+                            <td>query, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/docs">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>RealESRGAN</td>
+                            <td><li class="btn btn-outline-secondary">GET</li></td>
+                            <td>image url, size, apikey</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/ai/upscale?image=https://hostfile.my.id/file/35d1e27f3ce79b7b7b315.jpg&size=low&apikey=<%= apikey %>">Detail</a></td>
+                          </tr>
+                          <tr>
+                            <td>Vits Ai</td>
+                            <td><li class="btn btn-outline-secondary">POST</li></td>
+                            <td>text, model_id, lang</td>
+                            <td><a class="btn btn-outline-secondary mb-2" href="/docs">Detail</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p class="text-muted">
+          <%= footer %> 
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../modules/bootstrap.min.js"></script>
+  <script src="../modules/jquery.nicescroll.min.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/stisla.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>
