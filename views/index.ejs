@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Arifzyn API || DASHBOARD</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Arifzyn">
+  <meta name="keywords" content="api, arifzyn api, arifzyn, Arifzyn API">
+  <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:title" content="Arifzyn API - Arifzyn">
+  <meta property="og:description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="images/icon.png" type="" rel="icon">
+  <link href="images/icon.png" type="" rel="shortcut icon">
+  <link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.min.css">
+
+  <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+  <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css"> <!-- End Page level css : Dashboard  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="main-wrapper">
+  
+    <%- include('./layout/navbar.ejs') %>
+    <%- include('./layout/sidebar.ejs') %>
+    
+    <div class="content-body default-height ">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-6 col-xxl-12">
+            <div class="row">
+            
+              <div class="col-sm-6">
+                <div class="card avtivity-card">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <span class="activity-icon bgl-success me-md-4 me-3">
+                        <li class="fas fa-key info-icon"></li>
+                      </span>
+                      <div class="media-body">
+                        <p class="fs-14 mb-2">Apikey</p>
+                        <span class="title text-black font-w600"><%= apikey %></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="effect bg-success"></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card avtivity-card">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <span class="activity-icon bgl-secondary  me-md-4 me-3">
+                         <li class="fas fa-clock"></li>
+                      </span>
+                      <div class="media-body">
+                        <p class="fs-14 mb-2">IP Address</p>
+                        <span class="title text-black font-w600">...</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="effect bg-secondary"></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card avtivity-card">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <span class="activity-icon bgl-danger me-md-4 me-3">
+                        <li class="fas fa-user"></li>
+                      </span>
+                      <div class="media-body"> 
+                        <p class="fs-14 mb-2">Users Count</p>
+                        <span class="title text-black font-w600">...</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="effect bg-danger"></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card avtivity-card">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <span class="activity-icon bgl-warning  me-md-4 me-3">
+                        <li class="fas fa-clock"></li>
+                      </span>
+                      <div class="media-body">
+                        <p class="fs-14 mb-2">Clock</p>
+                        <span class="title text-black font-w600">...</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="effect bg-warning"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card avtivity-card">
+              <div class="card-body">
+              <div class="media align-items-center">
+                <span class="activity-icon bgl-primary me-md-4 me-3">
+                  <li class="fas fa-cloud-upload-alt"></li>
+                </span>
+                  <div class="media-body">
+                    <p class="fs-14 mb-2">API Request</p>
+                    <span class="title text-black font-w600">...</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="effect bg-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="vendor/chart-js/chart.bundle.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="vendor/peity/jquery.peity.min.js"></script>
+    <script src="vendor/apexchart/apexchart.js"></script>
+    <script src="js/dashboard/dashboard-1.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+
+</body>
+
+</html>

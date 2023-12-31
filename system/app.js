@@ -64,13 +64,14 @@ const expiredPremiumUsers = async () => {
   }
 };
 
-
+ 
 app.enable('trust proxy');
 app.set("json spaces", 2);
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use(express.json({
   limit: '5mb'
 }));

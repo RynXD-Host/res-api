@@ -1,86 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100" data-theme-version="dark">
 
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Arifzyn API || Login</title>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <title>Arifzyn API || Signup</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="DexignZone">
+  <meta name="robots" content="">
+  <meta name="keywords" content="admin, admin dashboard, admin template, bootstrap, bootstrap 5, CakePHP admin template, fitness, fitness admin, modern, responsive admin dashboard, sales dashboard, sass, ui kit, web app">
+  <meta name="description" content="Discover Gymove, the ultimate fitness solution that is designed to help you achieve a healthier lifestyle with its cutting-edge features and personalized programs. Gymove is a fully mobile-responsive admin dashboard template that provides the perfect blend of exercise, nutrition, and motivation. Begin your fitness journey today with Gymove and visit DexignZone for more information.">
+  <meta property="og:title" content="Gymove  - CakePHP Fitness Bootstrap Admin Dashboard Template">
+  <meta property="og:description" content="Discover Gymove, the ultimate fitness solution that is designed to help you achieve a healthier lifestyle with its cutting-edge features and personalized programs. Gymove is a fully mobile-responsive admin dashboard template that provides the perfect blend of exercise, nutrition, and motivation. Begin your fitness journey today with Gymove and visit DexignZone for more information.">
+  <meta property="og:image" content="https://gymove.dexignzone.com/cakephp/social-image.png">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://api.arifzyn.biz.id/css/style.css">
+  <link rel="stylesheet" href="https://api.arifzyn.biz.id/vendor/bootstrap-select/css/bootstrap-select.min.css">
+  <link href="https://api.arifzyn.biz.id/images/icon.png" type="" rel="icon">
+  <link href="https://api.arifzyn.biz.id/images/icon.png" type="" rel="shortcut icon">
+
+  <style>
+    body.login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+    }
+
+    .auth-form {
+      position: relative;
+      width: 350px;
+      height: 450px;
+      background: #000;
+      box-shadow: 0 0 50px #0ef;
+      border-radius: 20px;
+      padding: 40px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
-<body> 
-
- <!--
- <header class="navbar">
-  <div class="navbar-container">
-   <div class="navbar-brand">Arifzyn API</div>
-   <a class="navbar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></a>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarNav">
-   <ul class="navbar-nav ms-auto">
-    <li class="nav-item">
-     <a class="nav-link" href="/">Home</a>
-    </li>
-    <li class="nav-item">
-     <a class="nav-link" href="/terms">Terms of Service</a>
-    </li>
-   </ul>
-  </div>
- </header>
- -->
-
- <div class="wrapper">
-  <div class="form-wrapper sign-in">
-     <% if (messages.error || messages.success) { %>
-      <div class="flash-messages">
-        <% if (messages.error) { %>
-          <div class="alert alert-danger">
-            <%= messages.error %>
+<body class="h-100 login">
+  <div class="authincation h-100">
+    <div class="container h-100">
+      <div class="row justify-content-center h-100 align-items-center">
+        <div class="col-md-6">
+          <div class="authincation-content">
+            <div class="row no-gutters">
+              <div class="col-xl-12">
+                <div class="auth-form">
+                  <div class="text-center mb-3">
+                    <a href="demo.html"><img src="images/icon.png" alt=""></a>
+                  </div>
+                  <h4 class="text-center mb-4">Sign in your account</h4>
+                  <form action="demo.html">
+                    <div class="form-group">
+                      <label class="mb-1 form-label"> Apikey</label>
+                      <input type="text" name="apikey" id="apikey" class="form-control">
+                    </div>
+                    <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                      <div class="form-group">
+                        <div class="form-check custom-checkbox ms-1">
+                          <input type="checkbox" class="form-check-input" id="basic_checkbox_1">
+                          <label class="form-check-label" for="basic_checkbox_1">Remember my
+                            apikey</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary light btn-block">Sign Me In</button>
+                    </div>
+                  </form>
+                  <div class="new-account mt-3 text-center">
+                    <p>Or</p>
+                  </div>
+                  <div class="text-center mt-4">
+                    <div class="g-signin2" data-onsuccess="onSignIn">
+                      <a href="/auth/google"><i class="fab fa-google"></i> Sign in with Google</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <script><alert><%= messages.error %></alert></script>
-        <% } %>
-
-        <% if (messages.success) { %>
-          <div class="alert alert-success">
-            <%= messages.success %>
-          </div>
-          <script><alert><%= messages.success %></alert></script>
-        <% } %>
+        </div>
       </div>
-    <% } %>
-   <form action="/auth/login" method="POST">
-    <h2>Login</h2>
-    <div class="input-group">
-     <input type="password" name="apikey" required>
-     <label for="">Apikey</label>
     </div>
-    <div class="remember">
-     <label><input type="checkbox"> Remember me</label>
-    </div>
-    <button type="submit">Login</button>
-    <div class="signUp-link">
-     <p>Don't You Have Apikey?</p>
-     <div class="social-buttons">
-      <a href="/auth/google" class="btn gl-btn"><i class="fab fa-google"></i> Login with Google</a>
-      <!-- <a href="/auth/github" class="btn gh-btn"><i class="fab fa-github"></i> Login with GitHub</a> -->
-     </div>
-    </div>
-   </form>
   </div>
- </div>
- <script>
-  function toggleSidebar() {
-   document.querySelector('.navbar-nav').classList.toggle('active');
-  }
 
-  document.querySelectorAll('.navbar-nav a').forEach(link => {
-   link.addEventListener('click', () => {
-    document.querySelector('.navbar-nav').classList.remove('active');
-   });
-  });
- </script>
+  <script src="https://api.arifzyn.biz.id/vendor/global/global.min.js"></script>
+  <script src="https://api.arifzyn.biz.id/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="https://api.arifzyn.biz.id/js/custom.js"></script>
+  <script src="https://api.arifzyn.biz.id/js/deznav-init.js"></script>
+  <script src="vendor/global/global.min.js"></script>
+  <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/deznav-init.js"></script>
 </body>
 
-</html> 
+</html>

@@ -30,12 +30,11 @@ router.get("/docs", (req, res) => {
 })
 
 router.get("/dashboard", isAuthenticated, (req, res) => {
-  res.render("dashboard", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
+  res.render('index', {
+    config,
     user: req.user,
     apikey: req.user.apikey,
+    layout: "layout/index"
   })
 })
 
