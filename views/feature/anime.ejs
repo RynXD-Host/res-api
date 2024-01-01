@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Arifzyn API || DASHBOARD</title>
+  <title>Arifzyn API || Feature</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +80,6 @@
             </button>
           </div>
           <div class="modal-body text-center" id="modalContent">
-            <!-- Konten modal akan diisi melalui JavaScript -->
           </div>
         </div>
       </div>
@@ -91,7 +90,7 @@
         <div class="page-titles">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">feature</a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)">ai</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">anime</a></li>
           </ol>
         </div>
 
@@ -119,82 +118,99 @@
                         <td><strong class="text-black">01</strong></td>
                         <td>Komiku</td>
                         <td>no, query, url, url</td>
-                        <td>GET</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><button class="btn btn-primary btn-sm" onclick="showOptions(['Komiku Latest', 'Komiku Search', 'Komiku Detail', 'Komiku Chapter'], ['/anime/komiku/latest', '/anime/komiku/search?query=seirei%20gensouki', '/anime/komiku/detail?url=https://komiku.id/manga/seirei-gensouki-minazuki-futago/', '/anime/komiku/chapter?url=https://komiku.id/ch/seirei-gensouki-minazuki-futago-chapter-01-bahasa-indonesia/'])">Detail</button>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Komiku Latest', 'Komiku Search', 'Komiku Detail', 'Komiku Chapter'], ['/anime/komiku/latest', '/anime/komiku/search?query=seirei%20gensouki', '/anime/komiku/detail?url=https://komiku.id/manga/seirei-gensouki-minazuki-futago/', '/anime/komiku/chapter?url=https://komiku.id/ch/seirei-gensouki-minazuki-futago-chapter-01-bahasa-indonesia/'])">
+                            Detail
+                          </button>
                         </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">02</strong></td>
-                        <td>ChatGPT</td>
-                        <td>text, apikey</td>
-                        <td>GET</td>
+                        <td>Komikcast</td>
+                        <td>no, query, url, url</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/ai/ChatGPT3?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Komikcast Latest', 'Komikcast Search', 'Komikcast Detail', 'Komikcast Chapter'], ['/anime/Komikcast/latest', '/anime/Komikcast/search?query=seirei%20gensouki', '/anime/komikcast/detail?url=https://komikcast.lol/komik/outaishihi-ni-nante-naritakunai/', '/anime/Komikcast/chapter?url=https://komikcast.lol/chapter/isekai-yururi-kikou-chapter-44-bahasa-indonesia/'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">03</strong></td>
-                        <td>ChatGPT</td>
-                        <td>message, apikey</td>
-                        <td>POST</td>
+                        <td>Kusonime</td>
+                        <td>no, query, url</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/docs">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Komikcast Search', 'Komikcast Detail'], ['/anime/kusonime/search?query=kage%20no', '/anime/kusonime/detail?url=https://kusonime.com/shadow-garden-batch-subtitle-indonesia/'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">04</strong></td>
-                        <td>You</td>
-                        <td>text, apikey</td>
-                        <td>GET</td>
+                        <td>Oploverz</td>
+                        <td>no, query, url</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/ai/you?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Oploverz Latest', 'Oploverz Search', 'Oploverz Detail'], ['/anime/oploverz/latest', '/anime/oploverz/search?query=kage%20no', '/anime/oploverz/detail?url=https://oploverz.life/anime/__trashed/'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">05</strong></td>
-                        <td>Bard</td>
-                        <td>text, apikey</td>
-                        <td>POST</td>
+                        <td>Doujindesu</td>
+                        <td>no, query, url, url</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/docs">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Doujindesu Latest', 'Doujindesu Search', 'Doujindesu Detail'], ['/anime/doujindesu/latest', '/anime/doujindesu/search?query=', '/anime/doujindesu/detail?url=https://doujindesu.tv/manga/inma-soukutsu-boku-no-rinjin-wa-inma-oyako/'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">06</strong></td>
-                        <td>Gemini</td>
-                        <td>text, apikey</td>
-                        <td>GET</td>
+                        <td>Nekopoi</td>
+                        <td>no, query, url, url</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/ai/gemini?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Nekopoi Latest', 'Nekopoi Search', 'Nekopoi Detail'], ['/anime/nekopoi/latest', '/anime/nekopoi/search?query=overflow', '/anime/nekopoi/detail?url=https://nekopoi.care/uncensored-overflow-episode-2-subtitle-indonesia/'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td><strong class="text-black">07</strong></td>
-                        <td>Bing Chat</td>
-                        <td>text, apikey</td>
-                        <td>GET</td>
+                        <td>NHentai</td>
+                        <td>no, query, id, id</td>
+                        <td>
+                          <li class="btn btn-sm btn-outline-secondary ">GET</li>
+                        </td>
                         <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/ai/bing?text=Hallo&apikey=<%= apikey %>">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><strong class="text-black">08</strong></td>
-                        <td>Bing Image</td>
-                        <td>text, apikey</td>
-                        <td>GET</td>
-                        <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/ai/bingimg?prompt=Hallo&apikey=<%= apikey %>">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><strong class="text-black">09</strong></td>
-                        <td>Character Ai</td>
-                        <td>Documentation</td>
-                        <td>POST</td>
-                        <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/docs">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><strong class="text-black">10</strong></td>
-                        <td>Sovits</td>
-                        <td>Documentation</td>
-                        <td>POST</td>
-                        <td><span class="badge light badge-success">Active</span></td>
-                        <td><a class="btn btn-primary btn-sm" href="/docs">Detail</a></td>
+                        <td>
+                          <button class="btn btn-outline-secondary  mb-2" onclick="showOptions(['Nhnetai Latest', 'Nhnetai Search', 'Nhnetai Detail', 'Nhentai Pdf'], ['/anime/nhentai/latest', '/anime/nhentai/search?query=', '/anime/nhentai/detail?id=359336', '/anime/nhentai/pdf?id=359336'])">
+                            Detail
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -204,29 +220,26 @@
           </div>
         </div>
       </div>
-
-      <footer class="footer">
-        <div class="copyright">
-          <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank">Arifzyn
-              API</a> 2023
-          </p>
-        </div>
-      </footer>
-
+      
     </div>
+    <footer class="footer">
+      <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank">Arifzyn API</a> 2023</p>
+      </div>
+    </footer>
   </div> 
   
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="vendor/global/global.min.js"></script>
-  <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-  <script src="vendor/chart-js/chart.bundle.min.js"></script>
-  <script src="vendor/owl-carousel/owl.carousel.js"></script>
-  <script src="vendor/peity/jquery.peity.min.js"></script>
-  <script src="vendor/apexchart/apexchart.js"></script>
-  <script src="js/dashboard/dashboard-1.js"></script>
-  <script src="js/custom.min.js"></script>
-  <script src="js/deznav-init.js"></script>
-  <script>
+  <script src="../vendor/global/global.min.js"></script>
+  <script src="../vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="../vendor/chart-js/chart.bundle.min.js"></script>
+  <script src="../vendor/owl-carousel/owl.carousel.js"></script>
+  <script src="../vendor/peity/jquery.peity.min.js"></script>
+  <script src="../vendor/apexchart/apexchart.js"></script>
+  <script src="../js/dashboard/dashboard-1.js"></script>
+  <script src="../js/custom.min.js"></script>
+  <script src="../js/deznav-init.js"></script>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
       const closeModalButton = document.querySelector("#detailModal .close");
       closeModalButton.addEventListener('click', function() {
@@ -237,13 +250,14 @@
     function showOptions(title, urls) {
       const modalContent = title.map((t, index) => {
         const url = urls[index];
-        return `<p><a class="btn btn-outline-secondary  mb-2" style="background-color: #001f3f; width: 150px;" href="${url}">${t}</a></p>`;
+        return `<p><a class="btn light btn-outline-secondary  mb-2" style="background-color: #001f3f; width: 200px;" href="${url}"><span class="badge light">${t}</span></a></p>`;
       }).join('');
       const modalContentElement = document.getElementById("modalContent");
       modalContentElement.innerHTML = modalContent;
       $('#detailModal').modal('show');
     }
   </script>
+  
 </body>
 
 </html>

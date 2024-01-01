@@ -34,11 +34,10 @@ router.get("/dashboard", isAuthenticated, (req, res) => {
     config,
     user: req.user,
     apikey: req.user.apikey,
-    layout: "layout/index"
   })
 })
 
-router.get("/profile", isAuthenticated, (req, res) => {
+router.get("/users/profile", isAuthenticated, (req, res) => {
   res.render("profile", {
     title: config.web.title,
     footer: config.web.footer,
@@ -48,59 +47,40 @@ router.get("/profile", isAuthenticated, (req, res) => {
   })
 })
 
-router.get("/feature/download", (req, res) => {
-  res.render("feature/download", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
-    user: req.user,
-    apikey: req.user.apikey,
-    messages: req.flash()
-  })
-})
-
-router.get("/feature/ai", (req, res) => {
-  res.render("feature/ai", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
-    user: req.user,
-    apikey: req.user.apikey,
-    messages: req.flash()
-  })
-})
-
-router.get("/feature/stalker", (req, res) => {
-  res.render("feature/stalker", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
-    user: req.user,
-    apikey: req.user.apikey,
-    messages: req.flash()
-  })
-})
-
-router.get("/feature/anime", (req, res) => {
-  res.render("feature/anime", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
-    user: req.user,
-    apikey: req.user.apikey,
-    messages: req.flash()
-  })
-})
-
-router.get("/feature/search", (req, res) => {
-  res.render("feature/search", {
-    title: config.web.title,
-    footer: config.web.footer,
-    tags: config.web.tags,
-    user: req.user,
-    apikey: req.user.apikey,
-    messages: req.flash()
-  })
+router.get("/feature/:action", isAuthenticated, (req, res) => {
+	const action = req.params.action;
+	
+	try {
+	  let feature; 
+	  switch (action) {
+		case "download":
+		  feature = "download";
+		  break
+		case "ai": 
+		  feature = "ai";
+		  break
+		case "anime":
+		  feature = "anime";
+		  break
+		case "stalker":
+		  feature = "stalker";
+		  break  
+		case "search":
+		  feature = "search";
+		  break  
+		default:
+		  feature = ""
+	  }
+	  
+	  res.render("feature/" + action, {
+	  	config: config,
+	  	user: req.user,
+	  	apikey: req.user.apikey,
+	  	messages: req.flash()
+	  })
+	} catch (e) {
+		console.error(e)
+	}
 })
 
 module.exports = router
